@@ -122,7 +122,55 @@ in the box below the port selection.
 
 12. NOTE:  Due to the nature of almost everyone having a different router, port forwarding is beyond the scope of this guide.  
 I included what your rule should look like below. In my case I used a Ubiquiti USG. Google is your Friend here.   
-Plex also has some help with this available [here](https://support.plex.tv/articles/200931138-troubleshooting-remote-access/).  
+Plex also has some help with this available [here](https://support.plex.tv/articles/200931138-troubleshooting-remote-access/).    
+
+![portforward](https://i.imgur.com/J4UKt5Q.png)  
+
+13. After that is complete your remote access should be working! 
+![workingnetworksetting](https://i.imgur.com/lT8ak9s.png)  
+
+14. One last setting in Plex, Navigate to Library settings and click ‘show advanced settings’. Check these three boxes:  
+![3settings](https://i.imgur.com/X7lGOGq.png)  
 
 
+### Step 4 Set Up Auto Music Download: 
 
+1. First we need a source. Using the google account you created create a UNLISTED playlist on YouTube.   
+And add your music to it like so:  
+![playlist](https://i.imgur.com/OnLZQwF.png)
+
+2. Now it's back to linux. Navigate to the folder you chose to store your music and create a file named autodl.sh:  
+`sudo nano autodl.sh`
+
+3. Then copy the code from [HERE](https://github.com/fearherbs1/SYS-255-Final-Custom-Music-Streaming-Solution/blob/main/AutoDLYoutube.sh) and paste it inside that file.   
+This is the script that will grab our music.
+
+4. Before you save and close the file, be sure to change These fields in the script to match your liking. Be sure to remove the parentheses and escape spaces with a \  
+(Your album name here)                  ex: Auto\ Download\ Music  
+(Your genre here)                             ex. Dance  
+(Your Youtube Playlist link here)      ex. ([click me](https://www.youtube.com/playlist?list=PL_LZ3m675wGwLxZNgiwX_0vExUlqDelJn))    
+
+
+5. Save and close with `Ctrl + o`  
+
+6. Make the file Executable by doing:  
+ `sudo chmod +x autodl.sh`
+ 
+ 
+ 7. Now we need to install Python, FFmpeg, and Youtube-DL for this script to work. This is done with these commands:
+1.) `sudo apt-get update`
+2.) `sudo apt-get install python3 python3-pip -y`
+3.) `sudo pip3 install --upgrade youtube_dl`
+4.) `sudo apt-get install ffmpeg -y`
+ 
+ 
+ 8. Now before having the script run every 10 minutes, we will test the script by running it manually.  
+ If your script does not run make sure everything is on the same line as it is on github.  
+ **NOTE:** The script does not output anything so it may seem like it's frozen. Let it run until you get  
+ back to a command prompt. This can especially take a while if you have a large music playlist.  
+   
+  `sudo ./autodl.sh`  
+ 
+ 
+ 
+ 
