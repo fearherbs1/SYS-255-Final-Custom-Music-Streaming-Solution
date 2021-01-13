@@ -37,3 +37,47 @@ by Thomas SYS-255 12-8-2020
 6. [Plex Pass](https://www.plex.tv/plex-pass/) ^     
 
 ^ Plexamp is currently only available with a Plex Pass. While you can still listen to your music anywhere with the standard plex client, it is not as full featured as Plexamp. It can be purchased as a subscription or a lifetime licence bound to your account.
+
+
+## Build Documentation: 
+(This guide assumes that Ubuntu Server 20.04 LTS is already installed and ready to go.)  
+
+
+### Step 1 Static ip: 
+Due to the fact that we will be creating a port forwarding rule in our router, we need to make sure that our ip does not change.   
+This can be done via a DHCP reservation on your router, but to make things simple we will just set a static ip in ubuntu directly.  
+
+1. Open the Network configuration file with admin privileges. This file is located in /etc/netplan
+
+2. Yours may be named differently but mine is named: “00-installer-config.yaml”
+
+3. Open the file and make the config look like the lines below, filling in your own network information (without quotes):
+```
+dhcp4: false
+  addresses: [“Your ip”/”Subnet Mask in CIDR”]
+  gateway4: “Default Gateway”
+  nameservers:
+    addresses: [“Nameserver 1”,”Nameserver 2”]
+```
+4. In my case the ip address 192.168.1.184 was used.
+
+5. Apply the config with: sudo netplan apply
+
+### Step 2 Install Plex Media Server:  
+
+1.Add plex’s public repositories with these two commands:  
+
+  1. `echo deb https://downloads.plex.tv/repo/deb public main | sudo tee /etc/apt/sources.list.d/plexmediaserver.list`
+  2. `curl https://downloads.plex.tv/plex-keys/PlexSign.key | sudo apt-key add -`  
+
+2. Update repos with:  `sudo apt-get update`
+
+3. Install Plex Media server with: `sudo apt-get install plexmediaserver`
+
+4. Enable plex to start on boot with: `sudo systemctl enable plexmediaserver.service`
+
+5. Navigate to `http://”your ip address”:32400/web`
+
+6. If you are successful, you should see the start page:
+![startpage](https://i.imgur.com/bCxbwN9.png)
+
