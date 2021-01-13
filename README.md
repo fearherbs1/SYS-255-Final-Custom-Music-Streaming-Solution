@@ -203,6 +203,52 @@ cd "/plexmedia/music/sys255autodl"
  `*/10 * * * * /home/sys255plex/sutodl/runautodl.sh`  
 8.) Save and exit with: `Ctrl + o`   
  
+![cron](https://i.imgur.com/uqdU7ec.png).  
+
+
+13. This crontab sets the script to run once every 10 minutes. If you want to change it you can use this website to help you modify the entry.  
+
+
+### Step 5 Creating our playlist: 
+
+  Due to a bug in plex, we cannot just use album shuffle to listen to our music. This is because once a  
+new song is auto downloaded and added to plex, plex puts it inside a different album even if the album  
+name in the metadata is the same. We can get around this by creating a plex “smart playlist” instead.  
+This will allow all of the songs to be in the same spot, as the smart playlists update when the library is updated.
+
+1. Navigate to your library on plex and click “add to playlist” then “Create Smart Playlist”.   
+
+![smartplaylist](https://i.imgur.com/w0aVhzX.png)   
+
+2. Create the rule for the playlist just like the photo below, but replace “Certified Bumps” With your playlist name.
+
+![args](https://i.imgur.com/rLD9Hta.png)  
+
+3. Then click the save as dropdown and select, “Save as smart Playlist” and give it a name.    
+![save](https://i.imgur.com/WICYLKv.png)  
+
+4. Refresh your webpage, and then you will see a playlist section below your library with the playlist you created containing all of the songs!  
+![musicv9](https://i.imgur.com/VljRqJV.png)  
+
+
+### Step 6 Accessing Our Playlist:  
  
- 
- 
+We can either access our playlist via the plex web app [like we have been doing so far](https://app.plex.tv/)  
+
+Or we can access the playlist via Plexamp. Once the app is installed and you sign into your plex,     
+the playlist will be shown. You can also download the playlist to your local device by holding the playlist and selecting “Download…”  
+
+![plexamp](https://i.imgur.com/V7hxFIY.png)  
+
+
+Here is an example of the player once a song is playing. We even get a cool visualizer based on the album art we uploaded earlier.    
+
+![playing](https://i.imgur.com/F2fpD7p.png)
+
+
+## Network Map: 
+![netmap](https://i.imgur.com/w7MOaHP.png)  
+
+
+
+
