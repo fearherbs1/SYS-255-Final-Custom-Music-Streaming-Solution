@@ -81,3 +81,26 @@ dhcp4: false
 6. If you are successful, you should see the start page:
 ![startpage](https://i.imgur.com/bCxbwN9.png)
 
+### Step 3 Configure Plex: 
+
+1. Name your server then click next  
+
+2. Now we will create a library. This is where your music files will be stored.  
+Select the Music Type and Name it:  
+![nameserver](https://i.imgur.com/UJb1wxf.png)  
+
+3. Then we need to create a folder for our music to live in. I used this file path, but you can name it whatever you like:  
+
+`sudo mkdir -p /plexmedia/music/sys255autodl`
+
+4. Then we select that folder in the UI:  
+![selectfolder](https://i.imgur.com/x9qf2Hu.png)  
+
+5. Then we need to force plex to use the metadata we will be embedding in ourselves rather than searching the internet for it.  
+Click advanced and check the “prefer local metadata” box   
+![localmetadata](https://i.imgur.com/6YiItmE.png)  
+
+
+
+
+
