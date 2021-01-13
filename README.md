@@ -100,7 +100,29 @@ Select the Music Type and Name it:
 Click advanced and check the “prefer local metadata” box   
 ![localmetadata](https://i.imgur.com/6YiItmE.png)  
 
+6. Click “Add Library” and click through the rest of the setup guide.  
 
+7. Once you are done you should be placed at the plex main screen
+
+8. From here click “Sign in” at the top and sign in to your Plex Account to claim the server.  
+![signup](https://i.imgur.com/aH8yFSm.png)
+
+9. Once you sign in It will ask you to claim the server. Claim it.  
+![claim](https://i.imgur.com/0AG81J1.png)  
+
+10. Now navigate to the settings in the top right corner.   
+**(NOTE!) It may ask you to allow insecure connections. Allow it so we can connect and change settings.**  
+![settingspage](https://i.imgur.com/UDyeOPC.png)  
+
+
+11. Now navigate to the Remote Access Section. Fill in the port you will be forwarding to enable the server to be accessed from the internet.  
+The plex default is 32400, but I will be using 32402 due to me already having other plex servers. Also, include your internet upload speed   
+in the box below the port selection.  
+![networksettings](https://i.imgur.com/swJTCWd.png)  
+
+12. NOTE:  Due to the nature of almost everyone having a different router, port forwarding is beyond the scope of this guide.  
+I included what your rule should look like below. In my case I used a Ubiquiti USG. Google is your Friend here.   
+Plex also has some help with this available [here](https://support.plex.tv/articles/200931138-troubleshooting-remote-access/).  
 
 
 
