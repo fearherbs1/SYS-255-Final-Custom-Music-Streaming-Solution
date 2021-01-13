@@ -158,10 +158,10 @@ This is the script that will grab our music.
  
  
  7. Now we need to install Python, FFmpeg, and Youtube-DL for this script to work. This is done with these commands:
-1.) `sudo apt-get update`
-2.) `sudo apt-get install python3 python3-pip -y`
-3.) `sudo pip3 install --upgrade youtube_dl`
-4.) `sudo apt-get install ffmpeg -y`
+1.) `sudo apt-get update`  
+2.) `sudo apt-get install python3 python3-pip -y`  
+3.) `sudo pip3 install --upgrade youtube_dl`  
+4.) `sudo apt-get install ffmpeg -y`  
  
  
  8. Now before having the script run every 10 minutes, we will test the script by running it manually.  
@@ -170,6 +170,38 @@ This is the script that will grab our music.
  back to a command prompt. This can especially take a while if you have a large music playlist.  
    
   `sudo ./autodl.sh`  
+ 
+ 
+ 9. Once it's done you should be able to see your downloaded music in the folder   
+`ls -l`  
+
+![dldmusic](https://i.imgur.com/7joaYQT.png)  
+
+ 10. And If we go to plex and Scan our library: We should now see our music!    
+ ![scan](https://i.imgur.com/uSbL7Vi.png)  
+ 
+ ![musicinplex](https://i.imgur.com/1IZyS1u.png)  
+  
+ 11. If you like, you can upload your own album art by clicking the little pencil edit button on the “Various Artists” album.   
+ ![editalbum](https://i.imgur.com/YVOioBS.png)  
+ 
+ 
+ 12. Now we need to automate the running of our script. To do this, we need to make another script that changes to our folder and runs our autodl script. We can do this by:  
+ 
+1.) Navigate to your home directory: `cd ~`  
+2.) create our script: `sudo nano runautodl.sh`  
+3.) Make it executable: `sudo chmod +x runautodl.sh\`  
+4.) Open the file ( sudo nano runautodl.sh ) and add the following:  
+```
+cd "/plexmedia/music/sys255autodl"
+./autodl.sh
+```
+
+5.) Save the file with `ctrl +o`  
+6.) Open the root crontab with: `sudo crontab -e`   
+7.) Add this line, changing the file path to where you saved your script:   
+ `*/10 * * * * /home/sys255plex/sutodl/runautodl.sh`  
+8.) Save and exit with: `Ctrl + o`   
  
  
  
