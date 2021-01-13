@@ -27,3 +27,13 @@ by Thomas SYS-255 12-8-2020
 [Youtube-DL Documentation](https://github.com/ytdl-org/youtube-dl/blob/master/README.md#readme)  
 [Crontab Guru Scheduler](https://crontab.guru/)  
 
+
+## Requirments:
+1. [Ubuntu Server](https://ubuntu.com/download/server) Installation with internet access and enough storage for your music    
+2. Router that allows port forwarding.  
+3. [Google Account](https://accounts.google.com/signup?hl=en)    
+4. [Plex Account](https://www.plex.tv/sign-up/)    
+5. Mobile device with [Plexamp](https://plexamp.com/) Installed    
+6. [Plex Pass](https://www.plex.tv/plex-pass/) ^     
+
+^ Plexamp is currently only available with a Plex Pass. While you can still listen to your music anywhere with the standard plex client, it is not as full featured as Plexamp. It can be purchased as a subscription or a lifetime licence bound to your account.
